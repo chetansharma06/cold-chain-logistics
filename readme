@@ -1,0 +1,16 @@
+# Cold-chain Logistics Dispatch Console
+
+The app uses local JSON Lines files for shipment telemetry and audit events, Gemini for reasoning, and optional Pinecone-backed SOP search.
+
+## Windows quick start
+
+```powershell
+py -3.11 -m venv venv
+.\venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+if (-not (Test-Path .env)) { Copy-Item .env.storage.example .env }
+python scripts\ingest_legacy_data.py
+streamlit run src\ui.py
+```
+
+In VS Code, the workspace selects `venv` and activates it in new PowerShell terminals. See [docs/instrutions.md](docs/instrutions.md) for environment variables, storage paths, and tests.

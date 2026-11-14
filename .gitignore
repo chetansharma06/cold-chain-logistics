@@ -1,0 +1,6 @@
+.env
+__pycache__/
+venv/
+.venv/
+data/telemetry.jsonl
+data/audit_log.jsonl
